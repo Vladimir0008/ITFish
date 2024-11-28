@@ -4,6 +4,7 @@
 # n = int(len(l)/2)
 # for i in range(n, len(l)):
 #     print(l[i], end=" ")
+import sys
 
 # 406 Створіть список на основі введеної послідовності цілих чисел і надрукуйте його елементи таким чином: два останні
 # елементи переміщені з кінця в початок списку без зміни їх початкового порядку.
@@ -164,8 +165,72 @@
 
 #444 Напишіть програму, яка приймає послідовність слів, розділених комами і без пропусків в якості введення,
 # і друкує послідовність слів, розділених комами, після сортування за алфавітом.
-s = input("Write words: ")
-l = s.split(",")
-l = sorted(l)
-print(",".join(l))
+# s = input("Write words: ")
+# l = s.split(",")
+# l = sorted(l)
+# print(",".join(l))
 
+#445 Для введеної послідовності унікальних цілих чисел,
+# поміняйте місцями мінімальний та максимальний елементи цієї послідовності. Надрукуйте отриманий список.
+
+# nums = input("Write nums: ")
+# l = list(map(int, nums.split(",")))
+# minInt = sys.maxsize
+# minIntIndex = 0
+# maxInt = -sys.maxsize
+# maxIntIndex = 0
+# print(l)
+# for i in range(len(l)):
+#     if l[i] <= minInt:
+#         minInt = l[i]
+#         minIntIndex = i
+#     if l[i] >= maxInt:
+#         maxInt = l[i]
+#         maxIntIndex = i
+# l[minIntIndex] = maxInt
+# l[maxIntIndex] = minInt
+#
+# print(l)
+
+#446 Дано список чисел, підрахуйте, скільки пар елементів мають однакове значення (рівні).
+# Будь-які два елементи, що дорівнюють один одному, слід вважати рівно один раз.
+# nums = input("Write nums: ")
+# l = list(map(int, nums.split(" ")))
+# cnt = 0
+# for i in range(len(l) - 1):
+#     for j in range(i + 1, len(l)):
+#         if l[i] == l[j]:
+#             cnt+=1
+# print(cnt)
+
+#447 Напишіть програму, яка приймає послідовність рядків (порожній рядок для завершення програми)
+# як вхідний рядок і друкує рядки у верхньому регістрі.
+
+# isTrue = True
+# lines = []
+# while isTrue:
+#     line = input("Write line: ")
+#     if line == "":
+#         isTrue = False
+#     else:
+#         lines.append(line)
+#
+# for i in range(len(lines)):
+#     print(lines[i].upper())
+#
+#448 Для введеної послідовності цілих чисел обміняйте сусідні елементи у парах (A[0] з A[1], A[2] з A[3] і т. д.).
+# Надрукуйте отриманий список. Якщо в списку є непарне число елементів, залиште останній елемент на місці.
+nums = input("Write nums: ")
+l = list(map(int, nums.split(" ")))
+f = 0
+s = 0
+print(l)
+for i in range(len(l)):
+    if i%2 == 0:
+        f = l[i]
+    else:
+        s = l[i]
+        l[i-1] = s
+        l[i] = f
+
+print(l)
